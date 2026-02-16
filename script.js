@@ -359,13 +359,17 @@ document.addEventListener("DOMContentLoaded", () => {
 const openBtn = document.getElementById("openApplicationForm");
 const modal = document.getElementById("applicationModal");
 const closeBtn = document.getElementById("closeApplicationForm");
+const form = modal.querySelector("form");
+const formContent = modal.querySelector(".application-content");
 
-if (openBtn && modal && closeBtn) {
+if (openBtn && modal && closeBtn && form) {
+  // Open modal
   openBtn.addEventListener("click", () => {
     modal.classList.add("show");
     document.body.style.overflow = "hidden";
   });
 
+  // Close modal
   closeBtn.addEventListener("click", () => {
     modal.classList.remove("show");
     document.body.style.overflow = "";
@@ -377,6 +381,41 @@ if (openBtn && modal && closeBtn) {
       document.body.style.overflow = "";
     }
   });
+
+  // Handle form submit
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevent default page reload
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+    })
+      .then(() => {
+        // Clear the form
+        form.reset();
+
+        // Show success message
+        formContent.innerHTML = `
+          <span class="close-modal" id="closeApplicationForm">&times;</span>
+          <h2>Application Submitted!</h2>
+          <p>Thank you for your application. We will review your submission and get back to you shortly.</p>
+        `;
+
+        // Reattach close button functionality
+        const newCloseBtn = formContent.querySelector("#closeApplicationForm");
+        if (newCloseBtn) {
+          newCloseBtn.addEventListener("click", () => {
+            modal.classList.remove("show");
+            document.body.style.overflow = "";
+          });
+        }
+      })
+      .catch(() => {
+        alert("There was an error submitting the form. Please try again.");
+      });
+  });
 }
+
 
 
