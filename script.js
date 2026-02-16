@@ -355,3 +355,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Careers Application Modal
+const openBtn = document.getElementById("openApplicationForm");
+const modal = document.getElementById("applicationModal");
+const closeBtn = document.getElementById("closeApplicationForm");
+
+if (openBtn && modal && closeBtn) {
+  openBtn.addEventListener("click", () => {
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    document.body.style.overflow = "";
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+  });
+}
+
+
