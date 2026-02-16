@@ -135,19 +135,25 @@
     </section>
   
     <section class="careers-how section">
-      <div class="container">
-        <h2 class="section-title">How to apply</h2>
-        <ol>
-          <li>Prepare an up-to-date CV and short cover letter describing why you'd be a good fit.</li>
-          <li>Email your application to <a href="mailto:careers@empiretrustmfb.com">careers@empiretrustmfb.com</a> (subject: Role Title).</li>
-          <li>Include contact phone number and your location in the body.</li>
-        </ol>
-  
-        <p class="contact-note">
-          You can also reach HR by phone: <a href="tel:+23470000367473">0700 003 67473</a>. For general enquiries visit the Contact page.
-        </p>
-      </div>
-    </section>
+  <div class="container">
+    <h2 class="section-title">How to Apply</h2>
+
+    <p class="apply-intro">
+      Interested candidates should complete the application form below. 
+      Please ensure all details are accurate before submitting your resume.
+      Only shortlisted applicants will be contacted.
+    </p>
+
+    <button class="btn-primary" id="openApplicationForm">
+      Apply Now
+    </button>
+
+    <p class="contact-note">
+      For enquiries, contact HR: 
+      <a href="tel:+23470000367473">0700 003 67473</a>
+    </p>
+  </div>
+</section>
   
     <section class="careers-cta section">
         <div class="container">
@@ -218,5 +224,44 @@
       <p>&copy; 2025 Empire Trust Microfinance Bank. All rights reserved.</p>
     </div>
   </footer>
+
+  <div class="application-modal" id="applicationModal">
+  <div class="application-content">
+    <span class="close-modal" id="closeApplicationForm">&times;</span>
+
+    <h2>Submit Resume</h2>
+    <p class="form-note">
+      Only candidates that meet what we are looking for will be invited.
+    </p>
+
+    <form action="https://formsubmit.co/adeneyeprince262@gmail.com" method="POST" enctype="multipart/form-data">
+
+      <!-- Email Settings -->
+      <input type="hidden" name="_subject" value="New Job Application">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <input type="text" name="First Name" placeholder="First Name" required>
+      <input type="text" name="Last Name" placeholder="Last Name" required>
+      <input type="email" name="Email" placeholder="Email Address" required>
+
+      <input type="text" name="Position" placeholder="Position Applying For" required>
+
+      <input type="number" name="Age" placeholder="Your Age" required>
+      <input type="number" name="Experience" placeholder="Years of Experience" required>
+
+      <label class="file-label">
+        Upload resume (word/pdf only)
+        <input type="file" name="Resume" accept=".pdf,.doc,.docx" required>
+      </label>
+
+      <button type="submit" class="submit-btn">
+        Submit Application
+      </button>
+
+    </form>
+  </div>
+</div>
+  
 </body>
 </html>
