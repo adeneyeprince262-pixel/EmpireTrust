@@ -2690,28 +2690,113 @@ figcaption {
 }
 
 /* ===============================
-  "How to Apply" PAGE
+HOW TO APPLY (UPDATED)
 ================================= */
+
+.careers-how {
+  text-align: center;
+}
+
 .careers-how .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.careers-how .apply-intro {
+  max-width: 750px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+  color: #444;
+}
+.careers-how .contact-note {
+  margin-top: 2rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.careers-how .btn-primary {
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 30px;
+}
+
+
+
+/* ===============================
+APPLICATION MODAL
+================================= */
+
+.application-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.application-modal.show {
+  display: flex;
+}
+
+.application-content {
+  background: #fff;
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  border-radius: 12px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.apply-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.application-content form {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-.careers-how ol {
-  width: 100%;
-  max-width: 700px;
-  margin: 1rem auto;
-  padding-left: 1.5rem;
-  text-align: left; 
-  line-height: 1.8;
-  box-sizing: border-box;
+.application-content input,
+.application-content select {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }
 
-.careers-how .contact-note {
-  max-width: 800px;
-  text-align: center;
-  margin-top: 1rem;
+.submit-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* Why grid */
